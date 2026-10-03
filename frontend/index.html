@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI English Speaking Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">🗣️ <span>English AI</span></div>
+
+      <button class="nav active" data-section="home">🏠 Home</button>
+      <button class="nav" data-section="practice">💬 Practice</button>
+      <button class="nav" data-section="corrector">✍️ Grammar</button>
+      <button class="nav" data-section="evaluate">📊 Evaluate</button>
+      <button class="nav" data-section="history">📚 History</button>
+
+      <div class="sidebar-bottom">
+        <span>AI English Coach</span>
+        <small>Powered by Gemini</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>AI English Speaking Assistant</h1>
+          <p>Practice English, improve grammar and build confidence.</p>
+        </div>
+        <span id="status" class="status">Checking API...</span>
+      </header>
+
+      <section id="home" class="section active">
+        <div class="hero">
+          <div>
+            <span class="badge">AI ENGLISH COACH</span>
+            <h2>Speak better.<br><span>Learn faster.</span></h2>
+            <p>Have a conversation with AI and get instant corrections, suggestions and scores.</p>
+            <button class="primary" onclick="showSection('practice')">Start Practice →</button>
+          </div>
+          <div class="hero-icon">🗣️</div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">💬</div>
+            <h3>Conversation</h3>
+            <p>Practice natural English conversations with an AI tutor.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">✍️</div>
+            <h3>Grammar Correction</h3>
+            <p>Find mistakes and learn a more natural way to say things.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>AI Evaluation</h3>
+            <p>Get scores and personalized recommendations.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="practice" class="section">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>💬 Conversation Practice</h2>
+              <p>Choose a topic and start speaking with your AI tutor.</p>
+            </div>
+            <select id="topic">
+              <option>Daily Conversation</option>
+              <option>College Life</option>
+              <option>Job Interview</option>
+              <option>Travel</option>
+              <option>Technology</option>
+              <option>Friends and Family</option>
+            </select>
+          </div>
+
+          <div id="chat" class="chat">
+            <div class="message ai">
+              <div class="avatar">🤖</div>
+              <div>
+                <b>AI Tutor</b>
+                <p>Hello! Choose a topic and tell me something in English. I'll help you improve.</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="chatForm" class="input-row">
+            <input id="chatInput" placeholder="Type your English sentence..." autocomplete="off">
+            <button class="primary" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="corrector" class="section">
+        <div class="panel">
+          <h2>✍️ Grammar Corrector</h2>
+          <p>Enter a sentence and get a simple explanation.</p>
+
+          <textarea id="grammarInput" placeholder="Example: Yesterday I go to college and meet my friends."></textarea>
+          <button id="correctBtn" class="primary">Correct Sentence</button>
+
+          <div id="correctionResult" class="result hidden"></div>
+        </div>
+      </section>
+
+      <section id="evaluate" class="section">
+        <div class="panel">
+          <h2>📊 English Evaluation</h2>
+          <p>Write a short answer and let AI evaluate your English.</p>
+
+          <input id="evalTopic" value="Tell me about yourself." class="text-input">
+          <textarea id="evalInput" placeholder="Write your answer here..."></textarea>
+          <button id="evaluateBtn" class="primary">Evaluate My English</button>
+
+          <div id="evaluationResult" class="result hidden"></div>
+        </div>
+      </section>
+
+      <section id="history" class="section">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>📚 Practice History</h2>
+              <p>Your recent AI practice records.</p>
+            </div>
+            <button id="refreshHistory" class="secondary">Refresh</button>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
